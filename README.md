@@ -1,6 +1,6 @@
 # Openlib
 
-This is a tiny client to the Open Library's [Books API](https://openlibrary.org/dev/docs/api/books)
+This is a tiny client to the Open Library's [Books API](https://openlibrary.org/dev/docs/api/books). If this client doesn't meet your needs, try the other [Openlibrary client](https://github.com/jayfajardo/openlibrary).
 
 ## Installation
 
@@ -34,9 +34,9 @@ Or install it yourself as:
 
 For more information on Openlibrary, check their [Developer center](https://openlibrary.org/developers) and the [Books API documentation](https://openlibrary.org/dev/docs/api/books).
 
-## Development
+Openlibrary has a [GitHub](https://github.com/internetarchive/openlibrary) repository.
 
-### TODO
+## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
