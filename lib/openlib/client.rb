@@ -10,14 +10,17 @@ module Openlib
     end
 
     def get(id:, format: 'data', id_kind: :isbn)
-      raise ArgumetError, "Kind must be one of #{ID_KINDS}"       unless ID_KINDS.include?(id_kind)
-      
-      resp = URI.open( "https://openlibrary.org/api/books?jscmd=#{format}&format=json&bibkeys=#{id_kind.to_s.upcase}#{id}", 'User-Agent' => @user_agent )
-      
-      byebug unless resp.status.first == '200'
-      
+      unless ID_KINDS.include?(id_kind)
+        raise ArgumetError, "Kind must be one of #{ID_KINDS}"
+      end
+
+      url = "https://openlibrary.org/api/books?jscmd=#{format}&format=json&bibkeys=#{id_kind.to_s.upcase}:#{id}"
+
+      resp = URI.open(url, 'User-Agent' => @user_agent)
+
+      puts resp.status.first.to_s unless resp.status.first == '200'
+
       JSON.parse(resp.read)
     end
-
   end
 end
