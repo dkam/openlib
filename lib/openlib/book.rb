@@ -43,6 +43,15 @@ module Openlib
       authors
     end
 
+    def to_h
+      %i[url authors identifiers classifications subjects
+         subject_places subject_people subject_times publishers
+         publish_places publish_date excerpts links cover ebooks
+         number_of_pages weight title].each_with_object({}) do |obj, memo|
+        memo[obj] = send(obj) unless send(obj).nil?
+      end
+    end
+
     def method_missing(m, *args, &block)
       case m
       when :info_url, :preview, :preview_url, :thumbnail_url
