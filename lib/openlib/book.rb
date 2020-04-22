@@ -37,7 +37,7 @@ module Openlib
 
     def data_data(req:)
       case req
-      when :authors, :publishers, :subjects then data.dig(req.to_s).map { |p| p.dig('name') }
+      when :authors, :publishers, :subjects then data.dig(req.to_s)&.map { |p| p.dig('name') }
       else
         data.dig(req.to_s)
       end
