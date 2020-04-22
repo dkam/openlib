@@ -2,8 +2,6 @@
 
 This is a tiny client to the Open Library's [Books API](https://openlibrary.org/dev/docs/api/books)
 
-
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -32,11 +30,13 @@ Or install it yourself as:
 => ["Fiction", "World War, 1939-1945", "World War, 1939-1945 in fiction", "Data encryption (Computer science)", "Cryptography", "Literature", "Science Fiction", "Long Now Manual for Civilization", "Code and cipher stories"]
 ```
 
+## Openlibrary
+
+For more information on Openlibrary, check their [Developer center](https://openlibrary.org/developers) and the [Books API documentation](https://openlibrary.org/dev/docs/api/books).
+
 ## Development
 
 ### TODO
-
-Write some tests
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
