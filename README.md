@@ -30,6 +30,18 @@ Or install it yourself as:
 => ["Fiction", "World War, 1939-1945", "World War, 1939-1945 in fiction", "Data encryption (Computer science)", "Cryptography", "Literature", "Science Fiction", "Long Now Manual for Civilization", "Code and cipher stories"]
 ```
 
+You can query via ISBN, OCLC, LCCN or Openlibrary's OLID.
+
+```
+> b = Openlib::Book.new(id: 'OL7360862M', id_kind: :olid)
+> b.title
+=> "Ranger's Apprentice"
+> b.authors
+=> ["John Flanagan"]
+> b.identifiers
+=> {"isbn_13"=>["9780142406632"], "openlibrary"=>["OL7360862M"], "isbn_10"=>["0142406635"], "goodreads"=>["60400"], "librarything"=>["173672"]}
+````
+
 ## Openlibrary
 
 For more information on Openlibrary, check their [Developer center](https://openlibrary.org/developers) and the [Books API documentation](https://openlibrary.org/dev/docs/api/books).
