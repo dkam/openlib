@@ -44,7 +44,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/openlib.
+Bug reports and pull requests are welcome on GitHub at https://github.com/dkam/openlib.
 
 
 ## License
