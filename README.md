@@ -20,6 +20,8 @@ Or install it yourself as:
 
 ## Usage
 
+This library will use Openlibrary's *view* or *data* endpoint as appropriate to the requested attribute.  You can access the raw responses with *Book#view* or *Book#data*.
+
 ```
 > book = Openlib::Book.new(id: '9780316030571')
 > book.title
@@ -41,6 +43,8 @@ You can query via ISBN, OCLC, LCCN or Openlibrary's OLID.
 > b.identifiers
 => {"isbn_13"=>["9780142406632"], "openlibrary"=>["OL7360862M"], "isbn_10"=>["0142406635"], "goodreads"=>["60400"], "librarything"=>["173672"]}
 ````
+
+
 
 ## Openlibrary
 
