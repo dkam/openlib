@@ -20,7 +20,11 @@ module Openlib
 
       puts resp.status.first.to_s unless resp.status.first == '200'
 
-      JSON.parse(resp.read)
+      data = JSON.parse(resp.read)
+
+      return data if data.empty?
+
+      data.find { |k, _v| k.include?(id) }&.last
     end
   end
 end

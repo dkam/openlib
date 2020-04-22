@@ -27,15 +27,19 @@ module Openlib
       @data ||= @client.get(id: @id, id_kind: @id_kind, format: 'data')
     end
 
+    def web
+      @web ||= @client.get(id: @id, id_kind: @id_kind, format: 'data')
+    end
+
     def view_data(req:)
       view.first.last.dig(req.to_s)
     end
 
     def data_data(req:)
       case req
-      when :authors, :publishers, :subjects then data.first.last.dig(req.to_s).map { |p| p.dig('name') }
+      when :authors, :publishers, :subjects then data.dig(req.to_s).map { |p| p.dig('name') }
       else
-        data.first.last.dig(req.to_s)
+        data.dig(req.to_s)
       end
     end
 
@@ -44,11 +48,14 @@ module Openlib
     end
 
     def to_h
+      return {} if data.empty?
+
       %i[url authors identifiers classifications subjects
          subject_places subject_people subject_times publishers
          publish_places publish_date excerpts links cover ebooks
          number_of_pages weight title].each_with_object({}) do |obj, memo|
         memo[obj] = send(obj) unless send(obj).nil?
+        memo
       end
     end
 
